@@ -7,14 +7,12 @@
  * All numbers should be printed with two digits. 1 should be printed as 01
  * Return: 0
  */
-
 int main(void)
 {
 int n1 = 48;
 int a = 0;
 int b;
 int com = 44;
-
 while (a <= 99)
 {
 b = a + 1;
