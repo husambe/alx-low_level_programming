@@ -1,32 +1,46 @@
 #include <stdio.h>
 /**
- * main - Prints 3 combination of numbers
+ * main - Entry point
  *
- * Return: Always (Success)
+ * Return: Always 0 (Success/correct)
  */
 int main(void)
+
 {
-int c, i, k;
-for (c = '0'; c <= '9'; c++)
+int left;
+int right;
+int center;
+
+
+
+for (left = 48; left <= 57; left++)
 {
-for (i = '0'; i <= '9'; i++)
+for (center = left + 1; center <= 57; center++)
 {
-for (k = '0'; k <= '9'; k++)
+for (right = center + 1 ; right <= 57; right++)
+
+
 {
-if (c < i && i < k)
+putchar(left);
+putchar (center);
+putchar (right);
+
+if  ((left == 55) && (center == left + 1) && (right == center + 1))
 {
-putchar(c);
-putchar(i);
-putchar(k);
-if (c != '7')
-{
+break;
+}
+
 putchar(',');
-putchar(' ');
+putchar (' ');
+
 }
+
 }
+
 }
-}
-}
+
 putchar('\n');
+
 return (0);
+
 }
