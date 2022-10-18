@@ -1,8 +1,9 @@
 #include "main.h"
 /**
-* main - Entry point
-* Return: nothing, return void
-*/
+ * main - print_putchar
+ * is written by bwave
+ * return: 0
+ */
 int main(void)
 {
 _putchar('_');
