@@ -1,37 +1,50 @@
-#include"main.h"
+#include "main.h"
 /**
- * print_times_table - prints time table of n
+ * print_times_table - print times table from 0 to n
+ * @num: end of times table to be printed
  *
- * @n: takes number input
-*/
-void print_times_table(int n)
+ * Return: return value is void
+ */
+void print_times_table(int num)
 {
-int prod, mult, num;
-if (n <= 15 && n >= 0)
-{
-for (num = 0; num <= n; ++num)
-{
-_putchar(48);
-for (mult = 1; mult <= n; ++mult)
-{
-_putchar(',');
-_putchar(' ');
-prod = num * mult;
-if (prod <= 9)
-_putchar(' ');
-if (prod <= 99)
-_putchar(' ');
-if (prod >= 100)
-{
-_putchar((prod / 100) + 48);
-_putchar((prod / 10) % 10 + 48);
-} else if (prod <= 99 && prod >= 10)
-_putchar((prod / 10) + 48);
-_putchar((prod % 10) + 48);
-}
-_putchar('\n');
-}
-  
-}
-  
+	if (num >= 0 && num <= 15)
+	{
+		int i, j;
+
+		for (i = 0; i <= num; i++)
+		{
+			for (j = 0; j <= num; j++)
+			{
+				int n = i * j;
+
+				if (n > 99)
+				{
+					_putchar(n / 100 + '0');
+					_putchar((n % 100) / 10 + '0');
+					_putchar(n % 10 + '0');
+				}
+				else if (n > 9)
+				{
+					_putchar(' ');
+					_putchar(n / 10 + '0');
+					_putchar(n % 10 + '0');
+				}
+				else
+				{
+					if (j > 0)
+					{
+						_putchar(' ');
+						_putchar(' ');
+					}
+					_putchar(n + '0');
+				}
+				if (j == num)
+					break;
+
+				_putchar(',');
+				_putchar(' ');
+			}
+			_putchar('\n');
+		}
+	}
 }
