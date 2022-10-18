@@ -31,5 +31,7 @@ _putchar((prod % 10) + 48);
 }
 _putchar('\n');
 }
+  
 }
+  
 }
